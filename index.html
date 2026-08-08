@@ -23,13 +23,13 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif; }
-        body { background-color: var(--bg-light); color: var(--text-dark); min-height: 100vh; padding-bottom: 50px; }
+        body { background-color: var(--bg-light); color: var(--text-dark); min-height: 100vh; padding-bottom: 40px; }
 
-        /* Top Header & Translation Bar */
+        /* Top Header & Language Switcher Bar */
         .top-bar {
             background: #020f26;
             color: #ffffff;
-            padding: 8px 24px;
+            padding: 8px 20px;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -41,99 +41,67 @@
             color: #ffffff;
             padding: 4px 12px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
         }
 
-        .lang-switch:hover { background: var(--accent-blue); }
+        .lang-switch:hover { background: var(--accent-blue); transform: scale(1.05); }
 
-        /* Main Header Banner */
+        /* Header Banner Box */
         .header-bg {
             background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
             color: #ffffff;
-            padding: 28px 20px 85px 20px;
+            padding: 24px 20px;
             text-align: center;
-            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .header-top {
-            max-width: 800px;
+            max-width: 680px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 15px;
+            gap: 12px;
         }
 
-        /* Large Prominent Logos */
+        /* Fixed Header Logos */
         .header-logo {
-            height: 85px;
-            width: 85px;
+            height: 60px;
+            width: 60px;
             background: #ffffff;
-            border-radius: 18px;
-            padding: 6px;
-            object-fit: contain;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            transition: transform 0.3s ease;
-        }
-
-        .header-logo:hover { transform: scale(1.05); }
-
-        .header-titles h1 {
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .header-titles h2 {
-            font-size: 16px;
-            font-weight: 600;
-            color: #93c5fd;
-            letter-spacing: 0.5px;
-            margin-top: 2px;
-        }
-
-        /* Main Container */
-        .main-container {
-            max-width: 720px;
-            margin: -65px auto 0 auto;
-            padding: 0 16px;
-        }
-
-        /* Info Cards */
-        .info-badges {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            background: #ffffff;
-            padding: 18px;
-            border-radius: 18px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-            margin-bottom: 20px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .badge-item { display: flex; align-items: center; gap: 12px; }
-
-        .badge-icon {
-            width: 46px;
-            height: 46px;
-            background: #e8f0fe;
-            color: var(--primary-blue);
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
+            padding: 4px;
+            object-fit: contain;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255, 255, 255, 0.9);
             flex-shrink: 0;
         }
 
-        .badge-text h4 { font-size: 13px; font-weight: 800; color: var(--text-dark); }
-        .badge-text p { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+        .header-titles h1 {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .header-titles h2 {
+            font-size: 12px;
+            font-weight: 600;
+            color: #93c5fd;
+            letter-spacing: 0.5px;
+            margin-top: 3px;
+        }
+
+        /* Main Container Layout */
+        .main-container {
+            max-width: 680px;
+            margin: 20px auto 0 auto;
+            padding: 0 16px;
+        }
 
         /* Navigation Tabs */
         .tab-nav {
@@ -141,21 +109,21 @@
             background: #ffffff;
             border-radius: 14px;
             overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-bottom: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             border: 1px solid #e2e8f0;
         }
 
         .tab-btn {
             flex: 1;
-            padding: 14px;
+            padding: 13px;
             border: none;
             background: transparent;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             color: var(--text-muted);
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
         .tab-btn.active {
@@ -163,12 +131,12 @@
             color: #ffffff;
         }
 
-        /* Form Card Styling */
+        /* Form Card */
         .form-card {
             background: var(--card-bg);
             border-radius: 20px;
-            padding: 30px 24px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+            padding: 26px 22px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
             border: 1px solid #e2e8f0;
         }
 
@@ -179,34 +147,34 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 800;
             color: var(--primary-blue);
             text-transform: uppercase;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
             letter-spacing: 0.5px;
         }
 
         .section-title i {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             background: #e8f0fe;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         /* Input Controls */
-        .input-group { margin-bottom: 20px; }
+        .input-group { margin-bottom: 18px; }
 
         .input-label {
             display: block;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             color: #334155;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .input-box {
@@ -217,22 +185,22 @@
 
         .input-box i {
             position: absolute;
-            left: 16px;
+            left: 14px;
             color: #94a3b8;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .form-control {
             width: 100%;
-            padding: 13px 16px 13px 46px;
-            font-size: 14px;
+            padding: 12px 14px 12px 42px;
+            font-size: 13px;
             font-weight: 500;
             color: var(--text-dark);
             background: #f8fafc;
             border: 1.5px solid var(--border-color);
             border-radius: 12px;
             outline: none;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .form-control:focus {
@@ -242,20 +210,20 @@
         }
 
         textarea.form-control {
-            padding-top: 14px;
-            min-height: 85px;
+            padding-top: 12px;
+            min-height: 80px;
             resize: vertical;
         }
 
-        /* Camera Zone */
+        /* Live Camera Dropzone */
         .photo-upload-zone {
             border: 2px dashed #93c5fd;
             background: #f0f7ff;
             border-radius: 16px;
-            padding: 26px;
+            padding: 22px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .photo-upload-zone:hover {
@@ -263,20 +231,25 @@
             background: #e8f2ff;
         }
 
-        .upload-icon { font-size: 36px; color: var(--primary-blue); margin-bottom: 8px; }
-        .upload-text h5 { font-size: 15px; font-weight: 700; color: var(--primary-blue); }
-        .upload-text p { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+        .upload-icon {
+            font-size: 32px;
+            color: var(--primary-blue);
+            margin-bottom: 6px;
+        }
+
+        .upload-text h5 { font-size: 14px; font-weight: 700; color: var(--primary-blue); }
+        .upload-text p { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
 
         #cameraInput { display: none; }
 
         .image-preview-container {
             display: none;
-            margin-top: 14px;
+            margin-top: 12px;
         }
 
         .image-preview-container img {
             width: 100%;
-            max-height: 220px;
+            max-height: 200px;
             object-fit: cover;
             border-radius: 12px;
             border: 1px solid var(--border-color);
@@ -287,11 +260,11 @@
             background: #ecfdf5;
             color: var(--success);
             border: 1.5px solid #a7f3d0;
-            padding: 10px 14px;
-            border-radius: 10px;
-            font-size: 13px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
             font-weight: 700;
-            margin-top: 12px;
+            margin-top: 10px;
             text-align: center;
         }
 
@@ -301,32 +274,32 @@
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
             color: #ffffff;
             border: none;
-            padding: 16px;
-            font-size: 16px;
+            padding: 15px;
+            font-size: 15px;
             font-weight: 700;
             border-radius: 12px;
             cursor: pointer;
-            box-shadow: 0 4px 16px rgba(11, 79, 186, 0.3);
+            box-shadow: 0 4px 15px rgba(11, 79, 186, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin-top: 26px;
-            transition: all 0.2s ease;
+            gap: 8px;
+            margin-top: 22px;
+            transition: all 0.3s ease;
         }
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 22px rgba(11, 79, 186, 0.4);
+            box-shadow: 0 6px 20px rgba(11, 79, 186, 0.35);
         }
 
         /* Status Cards */
         .status-card {
             background: #f8fafc;
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 18px;
-            margin-top: 16px;
+            border-radius: 12px;
+            padding: 14px;
+            margin-top: 14px;
         }
 
         .status-head {
@@ -335,19 +308,18 @@
             align-items: center;
             font-weight: 800;
             border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
         }
 
-        .badge-pending { background: #fef3c7; color: #d97706; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; }
-        .badge-resolved { background: #d1fae5; color: #059669; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+        .badge-pending { background: #fef3c7; color: #d97706; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+        .badge-resolved { background: #d1fae5; color: #059669; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
 
         @media (max-width: 600px) {
-            .header-titles h1 { font-size: 16px; }
-            .header-titles h2 { font-size: 12px; }
-            .header-logo { height: 65px; width: 65px; }
-            .info-badges { grid-template-columns: 1fr; }
-            .form-card { padding: 22px 16px; }
+            .header-titles h1 { font-size: 14px; }
+            .header-titles h2 { font-size: 11px; }
+            .header-logo { height: 48px; width: 48px; }
+            .form-card { padding: 18px 14px; }
         }
     </style>
 </head>
@@ -358,42 +330,22 @@
         <button class="lang-switch" onclick="toggleLanguage()"><i class="fa-solid fa-globe"></i> <span id="langBtnText">मराठी</span></button>
     </div>
 
-    <!-- Header Section -->
+    <!-- Header Section (Fixed & Fully Visible) -->
     <div class="header-bg">
         <div class="header-top">
-            <!-- Large Logo 1: Sumeet -->
-            <img src="logo1.png" alt="Sumeet Logo" class="header-logo" onerror="this.src='https://via.placeholder.com/85?text=Sumeet'">
+            <img src="logo1.png" alt="Sumeet Logo" class="header-logo" onerror="this.src='https://via.placeholder.com/60?text=Sumeet'">
             
             <div class="header-titles">
                 <h1>SUMEET FACILITIES LIMITED</h1>
                 <h2>PUNE MUNICIPAL CORPORATION</h2>
             </div>
             
-            <!-- Large Logo 2: PMC -->
-            <img src="logo2.png" alt="PMC Logo" class="header-logo" onerror="this.src='https://via.placeholder.com/85?text=PMC'">
+            <img src="logo2.png" alt="PMC Logo" class="header-logo" onerror="this.src='https://via.placeholder.com/60?text=PMC'">
         </div>
     </div>
 
     <!-- Main Container -->
     <div class="main-container">
-        
-        <!-- Info Badges -->
-        <div class="info-badges">
-            <div class="badge-item">
-                <div class="badge-icon"><i class="fa-solid fa-headset"></i></div>
-                <div class="badge-text">
-                    <h4>SUMEET FACILITIES LIMITED</h4>
-                    <p id="subText1">Complaint & Field Operation</p>
-                </div>
-            </div>
-            <div class="badge-item">
-                <div class="badge-icon"><i class="fa-solid fa-clipboard-list"></i></div>
-                <div class="badge-text">
-                    <h4 id="subTitle2">REPORT CLEANING ISSUE</h4>
-                    <p id="subText2">Help us keep Pune clean and green</p>
-                </div>
-            </div>
-        </div>
 
         <!-- Navigation Tabs -->
         <div class="tab-nav">
@@ -440,7 +392,7 @@
                         </div>
                     </div>
 
-                    <!-- Ward Selection (4 Selected Wards) -->
+                    <!-- Ward Selection -->
                     <div class="input-group">
                         <label class="input-label" id="lblWard">Ward *</label>
                         <div class="input-box">
@@ -462,10 +414,8 @@
                             <i class="fa-solid fa-border-all"></i>
                             <select id="category" class="form-control" required>
                                 <option value="" id="optCat">Select Category</option>
-                                <option value="Garbage">Garbage / Sanitation (कचरा व स्वच्छता)</option>
-                                <option value="Drainage">Drainage Issue (ड्रेनेज समस्या)</option>
-                                <option value="StreetLight">Street Light (स्ट्रीट लाईट)</option>
-                                <option value="Roads">Roads & Potholes (रस्ते व खड्डे)</option>
+                                <option value="Garbage">Kachra Va Swachta (कचरा व स्वच्छता)</option>
+                                <option value="RoadSweeping">Raste Safai (रस्ते सफाई)</option>
                             </select>
                         </div>
                     </div>
@@ -474,13 +424,13 @@
                     <div class="input-group">
                         <label class="input-label" id="lblAddress">Address *</label>
                         <div class="input-box">
-                            <i class="fa-solid fa-location-dot" style="top: 16px;"></i>
+                            <i class="fa-solid fa-location-dot" style="top: 14px;"></i>
                             <textarea id="address" class="form-control" placeholder="Enter complete address..." required></textarea>
                         </div>
                     </div>
 
                     <!-- LIVE PHOTO SECTION -->
-                    <div class="section-title" style="margin-top: 32px;">
+                    <div class="section-title" style="margin-top: 26px;">
                         <i class="fa-solid fa-camera"></i>
                         <span id="secTitle2">ISSUE LIVE PHOTO</span>
                     </div>
@@ -494,7 +444,7 @@
                         <input type="file" id="cameraInput" accept="image/*" capture="camera" onchange="processLivePhoto(event)">
                     </div>
 
-                    <!-- Photo Preview & Lat/Long Coordinates Badge -->
+                    <!-- Photo Preview & GPS Badge -->
                     <div id="previewBox" class="image-preview-container">
                         <img id="livePhotoPreview" src="" alt="Live Preview">
                     </div>
@@ -527,24 +477,17 @@
 
         </div>
 
-        <!-- Footer -->
-        <div class="footer-bar" style="margin-top:25px; text-align:center; color:#64748b; font-size:12px;">
-            <p><strong>Together for a Cleaner Pune</strong> | Your report makes a difference.</p>
-        </div>
-
     </div>
 
 <script>
     const WEB_APP_URL = "YOUR_EXACT_DEPLOYED_WEB_APP_URL_HERE";
-    let currentLang = "EN"; // Default Language
+    let currentLang = "EN"; 
 
-    // Language Toggle Logic (English <-> Marathi)
     function toggleLanguage() {
         if (currentLang === "EN") {
             currentLang = "MR";
             document.getElementById('langBtnText').innerText = "English";
             
-            // Translate to Marathi
             document.getElementById('tabBtn1').innerHTML = `<i class="fa-solid fa-pen-to-square"></i> १. तक्रार नोंदवा`;
             document.getElementById('tabBtn2').innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> २. स्थिती तपासा`;
             document.getElementById('secTitle1').innerText = "तक्रारीची सविस्तर माहिती";
@@ -564,7 +507,6 @@
             currentLang = "EN";
             document.getElementById('langBtnText').innerText = "मराठी";
             
-            // Translate to English
             document.getElementById('tabBtn1').innerHTML = `<i class="fa-solid fa-pen-to-square"></i> 1. Report Issue`;
             document.getElementById('tabBtn2').innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> 2. Check Status`;
             document.getElementById('secTitle1').innerText = "REPORT DETAILS";
@@ -594,7 +536,6 @@
         document.getElementById('cameraInput').click();
     }
 
-    // Process Camera Photo & Auto Get GPS Lat/Long
     function processLivePhoto(event) {
         const file = event.target.files[0];
         const preview = document.getElementById('livePhotoPreview');
@@ -609,7 +550,6 @@
             };
             reader.readAsDataURL(file);
 
-            // Fetch Precise Geolocation (Lat / Long)
             if (navigator.geolocation) {
                 gpsBadge.style.display = 'block';
                 gpsBadge.innerText = "Fetching Live GPS Coordinates...";
