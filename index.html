@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sumeet Facilities & PMC - Grievance Portal</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -21,70 +22,320 @@
             --success: #10b981;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif; }
         body { background-color: var(--bg-light); color: var(--text-dark); min-height: 100vh; padding-bottom: 40px; }
 
-        .top-bar { background: #020f26; color: #ffffff; padding: 8px 20px; display: flex; justify-content: flex-end; }
-        .lang-switch { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; cursor: pointer; }
+        /* Top Bar */
+        .top-bar {
+            background: #020f26;
+            color: #ffffff;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
 
-        .header-bg { background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%); color: #fff; padding: 20px; text-align: center; }
-        .header-top { max-width: 680px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-        .header-logo { height: 55px; width: 55px; background: #fff; border-radius: 10px; padding: 3px; object-fit: contain; }
-        .header-titles h1 { font-size: 16px; font-weight: 800; }
-        .header-titles h2 { font-size: 11px; color: #93c5fd; }
+        .lang-switch {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-        .main-container { max-width: 680px; margin: 15px auto 0 auto; padding: 0 15px; }
+        .lang-switch:hover { background: var(--accent-blue); transform: scale(1.05); }
 
-        .tab-nav { display: flex; background: #fff; border-radius: 12px; overflow: hidden; margin-bottom: 15px; border: 1px solid #e2e8f0; }
-        .tab-btn { flex: 1; padding: 12px; border: none; background: transparent; font-size: 13px; font-weight: 700; color: var(--text-muted); cursor: pointer; }
-        .tab-btn.active { background: var(--primary-blue); color: #ffffff; }
+        /* Header Banner Box */
+        .header-bg {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: #ffffff;
+            padding: 22px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-        .form-card { background: var(--card-bg); border-radius: 16px; padding: 22px 18px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .header-top {
+            max-width: 680px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .header-logo {
+            height: 60px;
+            width: 60px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 4px;
+            object-fit: contain;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            flex-shrink: 0;
+        }
+
+        .header-titles h1 {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .header-titles h2 {
+            font-size: 12px;
+            font-weight: 600;
+            color: #93c5fd;
+            letter-spacing: 0.5px;
+            margin-top: 3px;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 680px;
+            margin: 18px auto 0 auto;
+            padding: 0 16px;
+        }
+
+        .tab-nav {
+            display: flex;
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 13px;
+            border: none;
+            background: transparent;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: var(--primary-blue);
+            color: #ffffff;
+        }
+
+        .form-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 24px 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+        }
+
         .form-section { display: none; }
         .form-section.active { display: block; }
 
-        .section-title { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; color: var(--primary-blue); margin-bottom: 16px; }
-        .input-group { margin-bottom: 15px; }
-        .input-label { display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 5px; }
-        .input-box { position: relative; display: flex; align-items: center; }
-        .input-box i { position: absolute; left: 14px; color: #94a3b8; font-size: 14px; }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            letter-spacing: 0.5px;
+        }
 
-        .form-control { width: 100%; padding: 11px 14px 11px 40px; font-size: 13px; color: var(--text-dark); background: #f8fafc; border: 1.5px solid var(--border-color); border-radius: 10px; outline: none; }
-        .form-control:focus { border-color: var(--primary-blue); background: #fff; }
+        .section-title i {
+            width: 28px;
+            height: 28px;
+            background: #e8f0fe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+        }
 
-        .photo-upload-zone { border: 2px dashed #93c5fd; background: #f0f7ff; border-radius: 14px; padding: 20px; text-align: center; cursor: pointer; }
-        .upload-icon { font-size: 30px; color: var(--primary-blue); margin-bottom: 5px; }
+        .input-group { margin-bottom: 16px; }
 
-        .image-preview-container { display: none; margin-top: 12px; }
-        .image-preview-container img { width: 100%; max-height: 220px; object-fit: contain; border-radius: 10px; border: 1px solid var(--border-color); background: #000; }
+        .input-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 6px;
+        }
 
-        .location-tag { display: none; background: #ecfdf5; color: var(--success); border: 1px solid #a7f3d0; padding: 8px; border-radius: 8px; font-size: 12px; font-weight: 700; margin-top: 8px; text-align: center; }
+        .input-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
 
-        .btn-submit { width: 100%; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%); color: #fff; border: none; padding: 14px; font-size: 15px; font-weight: 700; border-radius: 10px; cursor: pointer; margin-top: 20px; }
+        .input-box i {
+            position: absolute;
+            left: 14px;
+            color: #94a3b8;
+            font-size: 15px;
+        }
 
-        .status-card { background: #f8fafc; border: 1px solid var(--border-color); border-radius: 10px; padding: 12px; margin-top: 12px; }
-        .status-head { display: flex; justify-content: space-between; font-weight: 800; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; margin-bottom: 6px; }
-        .badge-pending { background: #fef3c7; color: #d97706; padding: 2px 8px; border-radius: 12px; font-size: 10px; }
-        .badge-resolved { background: #d1fae5; color: #059669; padding: 2px 8px; border-radius: 12px; font-size: 10px; }
+        .form-control {
+            width: 100%;
+            padding: 12px 14px 12px 42px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dark);
+            background: #f8fafc;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            background: #ffffff;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(11, 79, 186, 0.12);
+        }
+
+        textarea.form-control {
+            padding-top: 12px;
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .photo-upload-zone {
+            border: 2px dashed #93c5fd;
+            background: #f0f7ff;
+            border-radius: 16px;
+            padding: 22px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .photo-upload-zone:hover {
+            border-color: var(--primary-blue);
+            background: #e8f2ff;
+        }
+
+        .upload-icon {
+            font-size: 32px;
+            color: var(--primary-blue);
+            margin-bottom: 6px;
+        }
+
+        .upload-text h5 { font-size: 14px; font-weight: 700; color: var(--primary-blue); }
+        .upload-text p { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+        .image-preview-container {
+            display: none;
+            margin-top: 12px;
+        }
+
+        .image-preview-container img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: #000;
+        }
+
+        .location-tag {
+            display: none;
+            background: #ecfdf5;
+            color: var(--success);
+            border: 1.5px solid #a7f3d0;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(11, 79, 186, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(11, 79, 186, 0.35);
+        }
+
+        .status-card {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px;
+            margin-top: 14px;
+        }
+
+        .status-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 800;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
+
+        .badge-pending { background: #fef3c7; color: #d97706; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+        .badge-resolved { background: #d1fae5; color: #059669; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+
+        @media (max-width: 600px) {
+            .header-titles h1 { font-size: 14px; }
+            .header-titles h2 { font-size: 11px; }
+            .header-logo { height: 48px; width: 48px; }
+            .form-card { padding: 18px 14px; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Language Selector -->
     <div class="top-bar">
         <button class="lang-switch" onclick="toggleLanguage()"><i class="fa-solid fa-globe"></i> <span id="langBtnText">मराठी</span></button>
     </div>
 
+    <!-- Header Section -->
     <div class="header-bg">
         <div class="header-top">
-            <img src="logo1.png" alt="Sumeet Logo" class="header-logo" onerror="this.src='https://via.placeholder.com/55?text=Sumeet'">
+            <img src="logo1.png" alt="Sumeet Logo" class="header-logo" onerror="this.src='https://via.placeholder.com/60?text=Sumeet'">
             <div class="header-titles">
                 <h1>SUMEET FACILITIES LIMITED</h1>
                 <h2>PUNE MUNICIPAL CORPORATION</h2>
             </div>
-            <img src="logo2.png" alt="PMC Logo" class="header-logo" onerror="this.src='https://via.placeholder.com/55?text=PMC'">
+            <img src="logo2.png" alt="PMC Logo" class="header-logo" onerror="this.src='https://via.placeholder.com/60?text=PMC'">
         </div>
     </div>
 
+    <!-- Main Container -->
     <div class="main-container">
         <div class="tab-nav">
             <button class="tab-btn active" id="tabBtn1" onclick="switchTab('newTab')"><i class="fa-solid fa-pen-to-square"></i> 1. Report Issue</button>
@@ -92,32 +343,49 @@
         </div>
 
         <div class="form-card">
+            <!-- TAB 1: REPORT ISSUE -->
             <div id="newTab" class="form-section active">
                 <form id="complaintForm" onsubmit="handleFormSubmit(event)">
                     
-                    <div class="section-title"><i class="fa-solid fa-user"></i><span id="secTitle1">REPORT DETAILS</span></div>
+                    <div class="section-title">
+                        <i class="fa-solid fa-user"></i>
+                        <span id="secTitle1">REPORT DETAILS</span>
+                    </div>
 
+                    <!-- Mobile Number -->
                     <div class="input-group">
                         <label class="input-label" id="lblMobile">Mobile Number *</label>
-                        <div class="input-box"><i class="fa-solid fa-phone"></i><input type="tel" id="mobile" class="form-control" pattern="[0-9]{10}" maxlength="10" placeholder="Enter 10-digit mobile number" required></div>
+                        <div class="input-box">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" id="mobile" class="form-control" pattern="[0-9]{10}" maxlength="10" placeholder="Enter 10-digit mobile number" required>
+                        </div>
                     </div>
 
+                    <!-- Full Name -->
                     <div class="input-group">
                         <label class="input-label" id="lblName">Full Name *</label>
-                        <div class="input-box"><i class="fa-solid fa-user-large"></i><input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required></div>
+                        <div class="input-box">
+                            <i class="fa-solid fa-user-large"></i>
+                            <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                        </div>
                     </div>
 
+                    <!-- Email ID (Optional) -->
                     <div class="input-group">
-                        <label class="input-label" id="lblEmail">Email ID *</label>
-                        <div class="input-box"><i class="fa-solid fa-envelope"></i><input type="email" id="email" class="form-control" placeholder="Enter your email ID" required></div>
+                        <label class="input-label" id="lblEmail">Email ID (Optional)</label>
+                        <div class="input-box">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" class="form-control" placeholder="Enter email ID (optional)">
+                        </div>
                     </div>
 
+                    <!-- Ward -->
                     <div class="input-group">
                         <label class="input-label" id="lblWard">Ward *</label>
                         <div class="input-box">
                             <i class="fa-solid fa-building"></i>
                             <select id="ward" class="form-control" required>
-                                <option value="">Select Ward</option>
+                                <option value="" id="optWard">Select Ward</option>
                                 <option value="Nagarroad">Nagarroad (नगररोड)</option>
                                 <option value="Shivajinagar">Shivajinagar (शिवाजीनगर)</option>
                                 <option value="Dhankawadi">Dhankawadi (धनकवडी)</option>
@@ -126,33 +394,32 @@
                         </div>
                     </div>
 
+                    <!-- Category -->
                     <div class="input-group">
                         <label class="input-label" id="lblCategory">Category *</label>
                         <div class="input-box">
                             <i class="fa-solid fa-border-all"></i>
                             <select id="category" class="form-control" required>
-                                <option value="">Select Category</option>
+                                <option value="" id="optCat">Select Category</option>
                                 <option value="Garbage">Kachra Va Swachta (कचरा व स्वच्छता)</option>
                                 <option value="RoadSweeping">Raste Safai (रस्ते सफाई)</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="input-group">
-                        <label class="input-label" id="lblAddress">Address *</label>
-                        <div class="input-box"><i class="fa-solid fa-location-dot" style="top: 14px;"></i><textarea id="address" class="form-control" placeholder="Enter complete address..." required></textarea></div>
+                    <!-- Camera & Live Photo Section -->
+                    <div class="section-title" style="margin-top: 24px;">
+                        <i class="fa-solid fa-camera"></i>
+                        <span id="secTitle2">ISSUE LIVE PHOTO</span>
                     </div>
-
-                    <div class="section-title" style="margin-top: 22px;"><i class="fa-solid fa-camera"></i><span id="secTitle2">ISSUE LIVE PHOTO</span></div>
 
                     <label for="cameraInput" class="photo-upload-zone">
                         <div class="upload-icon"><i class="fa-solid fa-camera"></i></div>
                         <div class="upload-text">
                             <h5 id="upTitle">Click Here to Capture Photo</h5>
-                            <p id="upSub">Opens Camera & Fetches Location</p>
+                            <p id="upSub">Camera will fetch Location & Auto-Fill Address</p>
                         </div>
                     </label>
-                    <!-- capture="environment" मोबाईल कॅमेरा थेट उघडेल -->
                     <input type="file" id="cameraInput" accept="image/*" capture="environment" onchange="processLivePhoto(event)" style="display:none;">
 
                     <div id="previewBox" class="image-preview-container">
@@ -162,6 +429,15 @@
                     <input type="hidden" id="coordinates">
                     <input type="hidden" id="geoTaggedBase64">
 
+                    <!-- Location / Address (Auto-Filled from GPS) -->
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="input-label" id="lblAddress">Location / Address (Auto-Detected) *</label>
+                        <div class="input-box">
+                            <i class="fa-solid fa-location-dot" style="top: 14px;"></i>
+                            <textarea id="address" class="form-control" placeholder="Photo काढल्यावर पत्ता आपोआप येईल किंवा स्वतः लिहा..." required></textarea>
+                        </div>
+                    </div>
+
                     <button type="submit" id="submitBtn" class="btn-submit">
                         <i class="fa-solid fa-paper-plane"></i> <span id="btnSubmitText">SUBMIT REPORT</span>
                     </button>
@@ -169,10 +445,14 @@
                 </form>
             </div>
 
+            <!-- TAB 2: STATUS CHECK -->
             <div id="statusTab" class="form-section">
                 <div class="input-group">
                     <label class="input-label" id="lblStatusMobile">Registered Mobile Number *</label>
-                    <div class="input-box"><i class="fa-solid fa-phone"></i><input type="tel" id="checkMobile" class="form-control" pattern="[0-9]{10}" maxlength="10" placeholder="Enter 10-digit mobile number"></div>
+                    <div class="input-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" id="checkMobile" class="form-control" pattern="[0-9]{10}" maxlength="10" placeholder="Enter 10-digit mobile number">
+                    </div>
                 </div>
                 <button type="button" onclick="checkStatus()" id="checkBtn" class="btn-submit">
                     <i class="fa-solid fa-magnifying-glass"></i> <span id="btnCheckText">CHECK STATUS</span>
@@ -183,7 +463,8 @@
     </div>
 
 <script>
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxJhK25pMOYdJQrTudy2k5kopnhqYPCtpcTaC-rzfxnUNkzlBoyZccdJ-UE5sFZYglU/exec";
+    // तुमची अचूक Apps Script URL इथे ऍड केली आहे
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwbZItPVeK11OiWXbc7j55iEKBt823h_SUxL8IZNsp4VS0twmy-D5XM8QW5YdizN0n3/exec";
     let currentLang = "EN"; 
 
     function toggleLanguage() {
@@ -195,13 +476,13 @@
             document.getElementById('secTitle1').innerText = "तक्रारीची सविस्तर माहिती";
             document.getElementById('lblMobile').innerText = "मोबाईल नंबर *";
             document.getElementById('lblName').innerText = "पूर्ण नाव *";
-            document.getElementById('lblEmail').innerText = "ईमेल आयडी *";
+            document.getElementById('lblEmail').innerText = "ईमेल आयडी (पर्यायी)";
             document.getElementById('lblWard').innerText = "प्रभाग / वॉर्ड *";
             document.getElementById('lblCategory').innerText = "तक्रारीचा प्रकार *";
-            document.getElementById('lblAddress').innerText = "अचूक पत्ता *";
+            document.getElementById('lblAddress').innerText = "पत्ता / लोकेशन (ऑटो-डिटेक्ट) *";
             document.getElementById('secTitle2').innerText = "समस्येचा थेट (Live) फोटो";
-            document.getElementById('upTitle').innerText = "फोटो काढण्यासाठी इथे टच करा";
-            document.getElementById('upSub').innerText = "कॅमेरा आणि लोकेशन आपोआप जोडले जाईल";
+            document.getElementById('upTitle').innerText = "फोटो काढण्यासाठी येथे क्लिक करा";
+            document.getElementById('upSub').innerText = "कॅमेरा आपोआप पत्ता आणि लोकेशन घेईल";
             document.getElementById('btnSubmitText').innerText = "तक्रार सबमिट करा";
             document.getElementById('lblStatusMobile').innerText = "नोंदणीकृत मोबाईल नंबर *";
             document.getElementById('btnCheckText').innerText = "स्थिती तपासा";
@@ -213,13 +494,13 @@
             document.getElementById('secTitle1').innerText = "REPORT DETAILS";
             document.getElementById('lblMobile').innerText = "Mobile Number *";
             document.getElementById('lblName').innerText = "Full Name *";
-            document.getElementById('lblEmail').innerText = "Email ID *";
+            document.getElementById('lblEmail').innerText = "Email ID (Optional)";
             document.getElementById('lblWard').innerText = "Ward *";
             document.getElementById('lblCategory').innerText = "Category *";
-            document.getElementById('lblAddress').innerText = "Address *";
+            document.getElementById('lblAddress').innerText = "Location / Address (Auto-Detected) *";
             document.getElementById('secTitle2').innerText = "ISSUE LIVE PHOTO";
             document.getElementById('upTitle').innerText = "Click Here to Capture Photo";
-            document.getElementById('upSub').innerText = "Opens Camera & Fetches Location";
+            document.getElementById('upSub').innerText = "Camera will fetch Location & Auto-Fill Address";
             document.getElementById('btnSubmitText').innerText = "SUBMIT REPORT";
             document.getElementById('lblStatusMobile').innerText = "Registered Mobile Number *";
             document.getElementById('btnCheckText').innerText = "CHECK STATUS";
@@ -233,13 +514,15 @@
         document.getElementById(tabId).classList.add('active');
     }
 
+    // Process Photo, Fetch GPS & Auto Reverse-Geocode Address
     function processLivePhoto(event) {
         const file = event.target.files[0];
         const gpsBadge = document.getElementById('gpsBadge');
+        const addressBox = document.getElementById('address');
 
         if (file) {
             gpsBadge.style.display = 'block';
-            gpsBadge.innerText = "GPS लोकेशन मिळवत आहे...";
+            gpsBadge.innerText = "GPS लोकेशन व पत्ता मिळवत आहे...";
 
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
@@ -247,13 +530,30 @@
                         const lat = pos.coords.latitude.toFixed(6);
                         const lon = pos.coords.longitude.toFixed(6);
                         document.getElementById('coordinates').value = `${lat},${lon}`;
-                        gpsBadge.innerText = `✓ GPS Captured: Latitude ${lat}, Longitude ${lon}`;
+                        gpsBadge.innerText = `✓ GPS: ${lat}, ${lon}`;
+
+                        // Auto Reverse Geocoding (Fetch short address from Lat/Long)
+                        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data && data.display_name) {
+                                    const shortAddr = data.address.road || data.address.suburb || data.address.neighbourhood || "";
+                                    const area = data.address.city_district || data.address.city || "Pune";
+                                    addressBox.value = (shortAddr ? shortAddr + ", " : "") + area + ` (GPS: ${lat}, ${lon})`;
+                                } else {
+                                    addressBox.value = `Pune Location (GPS: ${lat}, ${lon})`;
+                                }
+                            })
+                            .catch(() => {
+                                addressBox.value = `Pune Location (GPS: ${lat}, ${lon})`;
+                            });
+
                         embedGeoTagOnImage(file, lat, lon);
                     },
                     err => {
                         gpsBadge.style.color = '#ef4444';
-                        gpsBadge.innerText = "⚠️ GPS ॲक्सेस नाकारला गेला. फोटो थेट जोडला.";
-                        document.getElementById('coordinates').value = "18.520430,73.856744"; // Default Pune Lat/Long fallback
+                        gpsBadge.innerText = "⚠️ GPS ॲक्सेस मिळाला नाही.";
+                        document.getElementById('coordinates').value = "18.520430,73.856744";
                         embedGeoTagOnImage(file, "18.520430", "73.856744");
                     },
                     { enableHighAccuracy: true, timeout: 10000 }
@@ -264,6 +564,7 @@
         }
     }
 
+    // Embed Canvas Geo-Tag Banner onto Image
     function embedGeoTagOnImage(file, lat, lon) {
         const reader = new FileReader();
         reader.onload = function(e) {
@@ -315,7 +616,7 @@
         const payload = {
             fullName: document.getElementById('fullName').value,
             mobile: document.getElementById('mobile').value,
-            email: document.getElementById('email').value,
+            email: document.getElementById('email').value || "",
             ward: document.getElementById('ward').value,
             category: document.getElementById('category').value,
             address: document.getElementById('address').value,
